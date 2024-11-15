@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
             <p className="mt-4 text-sm">
               Phone: +91 7620691360 <br />
-              Email: contact@mioneer.com
+              Email: contact@mioneer.in
             </p>
           </div>
 
