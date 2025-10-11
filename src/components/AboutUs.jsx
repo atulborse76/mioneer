@@ -1,167 +1,168 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import banner4 from '../assets/banner4.mp4';
 import visionImage from '../assets/banner8.png';
 import valuesImage from '../assets/banner6.png';
-import approachImage from '../assets/banner7.png';
+
 
 function AboutUs() {
     return (
-        <div className="bg-gray-100 py-16" id=''>
-            <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto my-8">
+        <div className="bg-darkBg py-8" id='about'>
+            <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto">
                 
                 {/* Heading Section */}
                 <motion.div 
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h1 className="text-5xl font-bold text-neautralDGrey">
-                        About Mioneer Private Limited
+                    <h1 className="text-6xl font-bold text-white mb-6">
+                        About <span className='gradient-text'>Mioneer</span>
                     </h1>
-                    <p className="text-lg text-neautralDGrey mt-4">
-                        Discover our mission, vision, and values that drive us to create innovative solutions and deliver exceptional results.
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Pioneering the future of technology with innovative AI, blockchain, and software solutions that transform businesses and drive digital excellence.
                     </p>
                 </motion.div>
 
-                {/* Video and Company Information */}
+                {/* Main Content */}
                 <motion.div 
-                    className="md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12"
+                    className="flex flex-col lg:flex-row items-center justify-between gap-16 mb-20"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="md:w-1/2">
+                    <div className="lg:w-1/2">
                         <motion.video
                             src={banner4}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="rounded-lg shadow-lg md:rounded-xl md:shadow-xl w-full"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            className="rounded-2xl shadow-2xl w-full border border-gray-800"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
                         />
                     </div>
                     <motion.div 
-                        className="md:w-1/2 mx-auto"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        className="lg:w-1/2"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-neautralDGrey text-lg leading-relaxed mb-8">
-                            Mioneer Private Limited is a trailblazer in technology, specializing in AI, blockchain, and custom software development. We are committed to driving innovation and efficiency through cutting-edge solutions tailored to the unique needs of businesses across industries. Our mission is to empower companies by integrating advanced technologies into their operations, helping them achieve their goals faster and more efficiently.
+                        <h2 className="text-4xl font-bold text-white mb-6">
+                            Leading Digital Transformation
+                        </h2>
+                        <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                            Mioneer Private Limited stands at the forefront of technological innovation, specializing in AI-driven solutions, blockchain integration, and bespoke software development. We empower businesses to navigate the digital landscape with confidence and agility.
                         </p>
-                        <p className="text-neautralDGrey text-lg leading-relaxed">
-                            Our dedicated team of experts works relentlessly to stay ahead of industry trends and deliver impactful solutions. From AI-powered analytics to secure blockchain implementations, we offer a comprehensive range of services designed to meet the evolving needs of modern businesses.
+                        <p className="text-gray-400 text-lg leading-relaxed">
+                            Our expert team combines deep industry knowledge with cutting-edge technology to deliver solutions that not only meet today&#39;s challenges but also anticipate tomorrow&#39;s opportunities.
                         </p>
                     </motion.div>
                 </motion.div>
 
-                {/* Our Vision Section */}
+                {/* Vision Section */}
                 <motion.div 
-                    className="md:w-11/12 mx-auto mt-16 flex flex-col md:flex-row-reverse items-center gap-12"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    className="grid md:grid-cols-2 gap-16 items-center mb-20"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="md:w-1/2">
-                        <motion.img 
+                    <div>
+                        <h3 className="text-4xl font-bold text-white mb-6">
+                            Our <span className='gradient-text'>Vision</span>
+                        </h3>
+                        <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                            To create a world where technology seamlessly enhances human potential and business capabilities. We envision a future where innovation knows no bounds and every organization can leverage cutting-edge technology to achieve extraordinary results.
+                        </p>
+                        <p className="text-gray-400 text-lg leading-relaxed">
+                            We&#39;re committed to pushing the boundaries of what&#39;s possible, driving progress through relentless innovation and strategic thinking.
+                        </p>
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <img 
                             src={visionImage} 
                             alt="Vision" 
-                            className="rounded-lg shadow-lg md:shadow-xl w-full"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
+                            className="rounded-2xl shadow-2xl w-full border border-gray-800"
                         />
-                    </div>
-                    <div className="md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-neautralDGrey mb-4">
-                            Our Vision
-                        </h3>
-                        <p className="text-neautralDGrey text-lg leading-relaxed mb-4">
-                            At Mioneer, we envision a world where technology enhances every facet of life and business. Our vision is to be the leading force in technological innovation, offering solutions that not only address today's challenges but also anticipate tomorrow's needs. We aim to create a future where businesses can operate with unparalleled efficiency, security, and transparency.
-                        </p>
-                        <p className="text-neautralDGrey text-lg leading-relaxed">
-                            We believe in pushing the boundaries of what’s possible, constantly striving for excellence and looking for new ways to leverage technology for a better tomorrow.
-                        </p>
-                    </div>
+                    </motion.div>
                 </motion.div>
 
-                {/* Our Values Section */}
+                {/* Values Section */}
                 <motion.div 
-                    className="md:w-11/12 mx-auto mt-16 flex flex-col md:flex-row items-center gap-12"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    className="grid md:grid-cols-2 gap-16 items-center mb-20"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="md:w-1/2">
-                        <motion.img 
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <img 
                             src={valuesImage} 
                             alt="Values" 
-                            className="rounded-lg shadow-lg md:shadow-xl w-full"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
+                            className="rounded-2xl shadow-2xl w-full border border-gray-800"
                         />
-                    </div>
-                    <div className="md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-neautralDGrey mb-4">
-                            Our Values
+                    </motion.div>
+                    <div>
+                        <h3 className="text-4xl font-bold text-white mb-6">
+                            Our <span className='gradient-text'>Values</span>
                         </h3>
-                        <ul className="list-disc list-inside text-neautralDGrey text-lg leading-relaxed mb-4">
-                            <li className="mb-4"><strong>Innovation:</strong> Continuously exploring and implementing the latest technologies to stay ahead in the digital age.</li>
-                            <li className="mb-4"><strong>Integrity:</strong> Upholding the highest standards of honesty, transparency, and ethical conduct in every project.</li>
-                            <li className="mb-4"><strong>Customer-Centricity:</strong> Prioritizing the needs and satisfaction of our clients, delivering solutions that create real value.</li>
-                            <li className="mb-4"><strong>Excellence:</strong> Committing to quality and excellence in every aspect of our work, from strategy to execution.</li>
-                        </ul>
-                        <p className="text-neautralDGrey text-lg leading-relaxed">
-                            These values guide us in every decision we make, ensuring that we remain committed to our mission of delivering exceptional results and making a positive impact in the tech industry.
-                        </p>
+                        <div className="space-y-4">
+                            {[
+                                { title: "Innovation", desc: "Continuously exploring and implementing the latest technologies" },
+                                { title: "Integrity", desc: "Upholding the highest standards of honesty and transparency" },
+                                { title: "Excellence", desc: "Committed to quality in every aspect of our work" },
+                                { title: "Collaboration", desc: "Working together to achieve extraordinary results" }
+                            ].map((value, index) => (
+                                <div key={index} className="flex items-start space-x-4">
+                                    <div className="w-3 h-3 bg-brandPrimary rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <h4 className="text-xl font-semibold text-white mb-1">{value.title}</h4>
+                                        <p className="text-gray-400">{value.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
-
-                {/* Our Approach Section */}
-                <motion.div 
-                    className="md:w-11/12 mx-auto mt-16 flex flex-col md:flex-row-reverse items-center gap-12"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                 <motion.div 
+                    className="mt-24"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="md:w-1/2">
-                        <motion.img 
-                            src={approachImage} 
-                            alt="Approach" 
-                            className="rounded-lg shadow-lg md:shadow-xl w-full"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        />
-                    </div>
-                    <div className="md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-neautralDGrey mb-4">
-                            Our Approach
-                        </h3>
-                        <p className="text-neautralDGrey text-lg leading-relaxed mb-4">
-                            We believe in a collaborative approach, working closely with our clients to understand their unique challenges and goals. Our team of experts leverages the latest technologies and methodologies to develop customized solutions that drive growth and efficiency. Whether it's AI-powered automation, blockchain-based security, or bespoke software development, Mioneer is dedicated to delivering results that exceed expectations.
-                        </p>
-                        <p className="text-neautralDGrey text-lg leading-relaxed">
-                            Our approach is built on transparency, communication, and a deep understanding of our clients’ needs. We partner with you to deliver innovative solutions that align with your vision and drive success.
-                        </p>
+                    <div className="relative overflow-hidden bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm p-16 rounded-3xl border border-gray-700 text-center">
+                        <div className="absolute inset-0 bg-gradient-to-r from-brandPrimary/20 to-brandSecondary/20 blur-3xl"></div>
+                        <div className="relative z-10">
+                            <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                                Ready to Transform Your <span className='bg-gradient-to-r from-brandPrimary to-brandSecondary bg-clip-text text-transparent'>Business?</span>
+                            </h3>
+                            <p className="text-xl text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">
+                                Let&#39;s discuss how our services can help you achieve your goals and stay ahead of the competition.
+                            </p>
+                            <a href="/contact" className="inline-block bg-gradient-to-r from-brandPrimary to-brandSecondary text-white py-4 px-10 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
+                                Contact Us
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
-
             </div>
         </div>
     );
