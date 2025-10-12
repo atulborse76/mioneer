@@ -1,7 +1,7 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import videoAI from '../assets/videoAI.mp4';
 import videoBlockchain from '../assets/videoBlockchain.mp4';
-import videoConsultancy from '../assets/videoConsultancy.mp4';
+import videoAgentics from '../assets/videoConsultancy.mp4';
 import videoDevelopment from '../assets/videoDevelopment.mp4';
 import videoCloud from '../assets/videoCloud.mp4';
 import videoCybersecurity from '../assets/videoAI.mp4';
@@ -9,133 +9,186 @@ import videoCybersecurity from '../assets/videoAI.mp4';
 const services = [
     {
         title: "AI-Powered Solutions",
-        description: `
-            Leverage cutting-edge AI technology to enhance your business operations. Our AI solutions automate processes, provide deep insights, and drive growth. We utilize advanced machine learning algorithms and data analytics to help you make informed decisions, improve operational efficiency, and stay ahead of the competition.
-            \nKey benefits include:
-            - Process automation for improved efficiency
-            - Data-driven decision-making
-            - Enhanced customer experiences
-            - Scalable solutions tailored to your needs
-        `,
+        description: "Leverage cutting-edge AI technology to enhance your business operations. Our AI solutions automate processes, provide deep insights, and drive growth.",
+        features: [
+            "Process automation for improved efficiency",
+            "Data-driven decision-making",
+            "Enhanced customer experiences",
+            "Scalable solutions tailored to your needs"
+        ],
         video: videoAI,
+        gradient: "from-blue-500 to-purple-500"
     },
     {
         title: "Blockchain Integration",
-        description: `
-            Implement secure and transparent blockchain solutions with our expertise. We offer comprehensive blockchain services, including smart contracts and decentralized applications. Our solutions ensure data integrity, enhance transparency, and foster trust across various business processes.
-            \nKey advantages are:
-            - Increased security and transparency
-            - Immutable and tamper-proof records
-            - Streamlined transactions and processes
-            - Customizable smart contracts
-        `,
+        description: "Implement secure and transparent blockchain solutions with our expertise. We offer comprehensive blockchain services, including smart contracts and decentralized applications.",
+        features: [
+            "Increased security and transparency",
+            "Immutable and tamper-proof records",
+            "Streamlined transactions and processes",
+            "Customizable smart contracts"
+        ],
         video: videoBlockchain,
+        gradient: "from-purple-500 to-pink-500"
     },
     {
-        title: "Tech Consultancy",
-        description: `
-            Get expert guidance on technological strategies with our tech consultancy services. We provide tailored advice on technology implementation, digital transformation, and innovation. Our consultants work closely with you to understand your business goals and challenges, and offer strategic solutions to optimize your tech infrastructure.
-            \nKey features include:
-            - In-depth technology assessments
-            - Strategic planning and roadmap development
-            - Expert recommendations for digital transformation
-            - Ongoing support and technology management
-        `,
-        video: videoConsultancy,
+        title: "AI Agentics Services",
+        description: "Build, deploy, and scale intelligent, autonomous agents designed to think, act, and collaborate like humans. Automate complex workflows, optimize decision-making, and enhance customer experiences at machine speed.",
+        features: [
+            "Autonomous workflow automation",
+            "Intelligent decision-making systems",
+            "Human-like agent collaboration",
+            "Complex process optimization"
+        ],
+        video: videoAgentics,
+        gradient: "from-cyan-500 to-blue-500"
     },
     {
         title: "Custom Software Development",
-        description: `
-            Our custom software development services provide tailor-made solutions that perfectly fit your business needs. We specialize in developing high-quality, scalable software whether you need new applications or enhancements to existing systems. Our development process includes thorough requirements analysis, iterative development, and rigorous testing to ensure successful outcomes.
-            \nBenefits include:
-            - Bespoke software tailored to your requirements
-            - Scalable and flexible solutions
-            - Comprehensive testing and quality assurance
-            - Post-launch support and maintenance
-        `,
+        description: "Our custom software development services provide tailor-made solutions that perfectly fit your business needs. We specialize in developing high-quality, scalable software.",
+        features: [
+            "Bespoke software tailored to your requirements",
+            "Scalable and flexible solutions",
+            "Comprehensive testing and quality assurance",
+            "Post-launch support and maintenance"
+        ],
         video: videoDevelopment,
+        gradient: "from-green-500 to-teal-500"
     },
     {
         title: "Cloud Computing",
-        description: `
-            Optimize your infrastructure with our cloud computing services. We offer solutions for cloud migration, management, and optimization to help you leverage the benefits of cloud technology. Our team ensures seamless transitions to the cloud, enhances your operational agility, and helps you manage costs effectively.
-            \nKey benefits are:
-            - Scalable and flexible cloud solutions
-            - Cost-effective cloud management
-            - Improved data accessibility and collaboration
-            - Enhanced security and compliance
-        `,
+        description: "Optimize your infrastructure with our cloud computing services. We offer solutions for cloud migration, management, and optimization.",
+        features: [
+            "Scalable and flexible cloud solutions",
+            "Cost-effective cloud management",
+            "Improved data accessibility and collaboration",
+            "Enhanced security and compliance"
+        ],
         video: videoCloud,
+        gradient: "from-orange-500 to-red-500"
     },
     {
         title: "Cybersecurity Solutions",
-        description: `
-            Protect your business from cyber threats with our advanced cybersecurity solutions. We provide comprehensive services including threat detection, incident response, and vulnerability assessments to safeguard your operations. Our approach helps mitigate risks, respond to incidents promptly, and ensure your data remains secure.
-            \nKey features include:
-            - Proactive threat detection and monitoring
-            - Rapid incident response and recovery
-            - In-depth vulnerability assessments
-            - Customized security strategies and solutions
-        `,
+        description: "Protect your business from cyber threats with our advanced cybersecurity solutions. We provide comprehensive services including threat detection and incident response.",
+        features: [
+            "Proactive threat detection and monitoring",
+            "Rapid incident response and recovery",
+            "In-depth vulnerability assessments",
+            "Customized security strategies and solutions"
+        ],
         video: videoCybersecurity,
+        gradient: "from-red-500 to-pink-500"
     },
 ];
 
 const ServicesPage = () => {
     return (
-        <div className='relative bg-white py-16' id='services'>
-            <div className='md:px-14 px-4 max-w-screen-2xl mx-auto relative z-10'>
-                <div className='text-center mb-12'>
-                    <h2 className='text-4xl font-bold text-neutral-800 animate__animated animate__fadeIn'>
-                        Our Services
-                    </h2>
-                    <p className='text-lg text-gray-600 mt-4 animate__animated animate__fadeIn animate__delay-1s'>
-                        Explore our wide range of services tailored to meet your business needs and drive growth.
+        <div className='min-h-screen bg-gradient-to-b from-darkBg via-gray-900 to-darkBg pt-32 pb-20'>
+            <div className='px-4 lg:px-14 max-w-screen-2xl mx-auto'>
+                
+                {/* Header Section */}
+                <motion.div 
+                    className='text-center mb-20'
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                     <h1 className="text-6xl font-bold text-white mb-6">
+                        Our <span className='gradient-text'>Services</span>
+                    </h1>
+                    <p className='text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed'>
+                        Explore our wide range of services tailored to meet your business needs and drive growth through innovative technology solutions.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-3'>
+                {/* Services Grid */}
+                <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
                     {services.map((service, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className='text-center p-6 bg-neutral-50 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 animate__animated animate__fadeIn animate__delay-2s'
-                            style={{ minHeight: '520px' }}
+                            className='group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 hover:border-brandPrimary transition-all duration-500 overflow-hidden'
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -10 }}
                         >
-                            <div className='relative'>
-                                <video
-                                    src={service.video}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className='w-full h-40 object-cover rounded-lg shadow-md'
-                                />
+                            {/* Background Glow Effect */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`}></div>
+                            
+                            {/* Content */}
+                            <div className='relative z-10 p-8'>
+                                {/* Video */}
+                                <div className='relative mb-6 overflow-hidden rounded-2xl'>
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20 blur-xl`}></div>
+                                    <video
+                                        src={service.video}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className='relative w-full h-48 object-cover rounded-2xl border-2 border-gray-700 group-hover:border-brandPrimary transition-all duration-500'
+                                    />
+                                </div>
+
+                                {/* Title */}
+                                <h3 className='text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-brandPrimary group-hover:to-brandSecondary group-hover:bg-clip-text transition-all duration-300'>
+                                    {service.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className='text-gray-400 mb-6 leading-relaxed'>
+                                    {service.description}
+                                </p>
+
+                                {/* Features List */}
+                                <div className='space-y-3'>
+                                    <h4 className='text-sm font-bold text-gray-300 uppercase tracking-wider mb-3'>Key Features:</h4>
+                                    {service.features.map((feature, idx) => (
+                                        <div key={idx} className='flex items-start space-x-3 group/item'>
+                                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient} mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300`}></div>
+                                            <p className='text-sm text-gray-400 group-hover/item:text-gray-300 transition-colors duration-300'>{feature}</p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Learn More Button */}
+                                <div className='mt-8'>
+                                    <button className='w-full py-3 px-6 bg-gray-800 hover:bg-gradient-to-r hover:from-brandPrimary hover:to-brandSecondary text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg'>
+                                        Learn More
+                                    </button>
+                                </div>
                             </div>
-                            <h3 className='text-2xl font-semibold text-neutral-800 mt-6 mb-4'>
-                                {service.title}
-                            </h3>
-                            <p className='text-gray-600 whitespace-pre-line'>
-                                {service.description}
-                            </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
 
-            <style jsx>{`
-                .floating-element {
-                    will-change: transform;
-                }
-                .animate-flow {
-                    animation: flow1 8s ease-in-out infinite alternate;
-                }
-                @keyframes flow1 {
-                    0% { transform: translateY(0) rotate(0); }
-                    100% { transform: translateY(-40px) rotate(15deg); }
-                }
-            `}</style>
+                {/* CTA Section */}
+                <motion.div 
+                    className="mt-24"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="relative overflow-hidden bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm p-16 rounded-3xl border border-gray-700 text-center">
+                        <div className="absolute inset-0 bg-gradient-to-r from-brandPrimary/20 to-brandSecondary/20 blur-3xl"></div>
+                        <div className="relative z-10">
+                            <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                                Ready to Transform Your <span className='bg-gradient-to-r from-brandPrimary to-brandSecondary bg-clip-text text-transparent'>Business?</span>
+                            </h3>
+                            <p className="text-xl text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">
+                                Let&#39;s discuss how our services can help you achieve your goals and stay ahead of the competition.
+                            </p>
+                            <a href="/contact" className="inline-block bg-gradient-to-r from-brandPrimary to-brandSecondary text-white py-4 px-10 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </motion.div>
+
+            </div>                                                            
         </div>
     );
 };
-
 export default ServicesPage;
